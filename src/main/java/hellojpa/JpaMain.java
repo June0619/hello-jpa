@@ -14,16 +14,24 @@ public class JpaMain {
 
         tx.begin();
 
-        //CODE
-        Member member = new Member();
+        try {
+            /** Member Insert **/
+//            Member member = new Member();
+//            member.setId(2L);
+//            member.setName("memberB");
+//            em.persist(member);
+//
+//            tx.commit();
 
-        member.setId(2L);
-        member.setName("memberB");
+            Member findMember = em.find(Member.class, 1L);
+            System.out.println("findMember.id = " + findMember.getId());
+            System.out.println("findMember.name = " + findMember.getName());
 
-        em.persist(member);
-        tx.commit();
-
-        em.close();
+        } catch(Exception e) {
+            tx.rollback();
+        } finally {
+            em.close();
+        }
         emf.close();
     }
 
