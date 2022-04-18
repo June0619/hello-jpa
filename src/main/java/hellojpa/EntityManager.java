@@ -28,6 +28,13 @@ public class EntityManager {
 //            em.remove(member);
 
 
+            Member memberA = em.find(Member.class, 100L);
+            Member memberB = em.find(Member.class, 100L);
+
+            boolean entityEquality = memberA == memberB;
+            System.out.println("entityEquality = " + entityEquality);
+
+
         } catch(Exception e) {
             tx.rollback();
         } finally {
