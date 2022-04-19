@@ -20,8 +20,10 @@ public class EntityManager {
             member.setId(100L);
             member.setName("HelloJPA");
 
+            System.out.println("=== Before ===");
             //객체를 저장한 상태(영속)
             em.persist(member);
+            System.out.println("=== After ===");
             //회원 엔티티를 영속성 컨텍스트에서 분리(준영속 상태)
 //            em.detach(member);
             //객체를 데이터베이스에서 삭제
