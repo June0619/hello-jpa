@@ -11,8 +11,13 @@ import java.util.Date;
 //JPA가 관리하는 객체
 @Entity
 @Data
+//@SequenceGenerator(name = "member_sequence", sequenceName = "member_seq")
 public class Member {
+    //Id 만 있을 경우 기본키를 직접 입력
     @Id
+    // AUTO 는 DB 방언에 따라 자동 생성
+    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "member_seq")
     private Long id;
     //nullable -> Not null 제약조건
     //unique
