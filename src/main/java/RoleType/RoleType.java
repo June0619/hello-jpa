@@ -1,5 +1,5 @@
 package RoleType;
 
 public enum RoleType {
-    USER, ADMIN
+    GUEST, USER, ADMIN
 }
