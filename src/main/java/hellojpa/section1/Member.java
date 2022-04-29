@@ -1,4 +1,4 @@
-package hellojpa;
+package hellojpa.section1;
 
 import lombok.Data;
 

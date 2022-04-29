@@ -1,10 +1,8 @@
-package hellojpa;
+package hellojpa.section1;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
-import java.util.List;
 
 public class Detach {
 
