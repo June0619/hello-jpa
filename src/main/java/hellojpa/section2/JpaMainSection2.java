@@ -22,8 +22,17 @@ public class JpaMainSection2 {
 
             Member member = new Member();
             member.setMemberName("member1");
-            member.setTeamId(team.getId());
+            // 좋지 않은 설계
+//            member.setTeamId(team.getId());
+            member.setTeam(team);
             em.persist(member);
+
+            em.flush();
+            em.clear();
+
+            Member findMember = em.find(Member.class, member.getId());
+            Team findTeam = findMember.getTeam();
+            System.out.println("findTeam = " + findTeam.getName());
 
             tx.commit();
 
