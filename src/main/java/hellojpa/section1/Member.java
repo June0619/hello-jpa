@@ -9,7 +9,7 @@ import java.util.Date;
 
 //@Table 실제 테이블 명과 다른 경우 매핑
 //JPA가 관리하는 객체
-@Entity
+//@Entity
 @Data
 //@SequenceGenerator(name = "member_sequence", sequenceName = "member_seq")
 public class Member {
