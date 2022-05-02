@@ -25,7 +25,7 @@ public class JpaMainSection2 {
             member.setMemberName("member1");
             // 좋지 않은 설계
 //            member.setTeamId(team.getId());
-            member.setTeam(team);
+            member.changeTeam(team);
             em.persist(member);
 
             em.flush();
