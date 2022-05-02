@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity @Getter @Setter @ToString
+@Entity @Getter @Setter
 public class Team {
 
     @Id @GeneratedValue
