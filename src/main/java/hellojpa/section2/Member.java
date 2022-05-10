@@ -21,6 +21,10 @@ public class Member {
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
+    @OneToOne
+    @JoinColumn(name = "LOCKER_ID")
+    private Locker locker;
+
     //연관관계 편의 메서드
     //관례상 setter 를 사용하기보다 별도의 이름을 부여하는 것이 좋음
     public void changeTeam(Team team) {
