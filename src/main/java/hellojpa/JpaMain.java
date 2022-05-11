@@ -29,8 +29,10 @@ public class JpaMain {
             em.flush();
             em.clear();
 
-            Movie findMovie = em.find(Movie.class, movie.getId());
-            System.out.println("findMovie = " + findMovie);
+            // TABLE PER CLASS 전략일 경우
+            // 부모 타입으로 조회 시 UNION 을 걸어 전체 테이블을 다 조회한다.
+            Item item = em.find(Item.class, movie.getId());
+            System.out.println("findMovie = " + item);
 
             tx.commit();
         } catch (Exception e) {
