@@ -1,14 +1,19 @@
-package hellojpa.section2;
+package hellojpa;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Product {
+@Getter @Setter
+public class Member extends BaseEntity {
 
     @Id @GeneratedValue
     private Long id;
-
     private String name;
+
+
 }
