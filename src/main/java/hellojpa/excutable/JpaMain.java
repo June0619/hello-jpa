@@ -1,4 +1,6 @@
-package hellojpa;
+package hellojpa.excutable;
+
+import hellojpa.Member;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
