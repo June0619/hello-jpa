@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.MappedSuperclass;
+import javax.persistence.PrePersist;
 import java.time.LocalDateTime;
 
 @MappedSuperclass
@@ -15,4 +16,12 @@ public abstract class BaseEntity {
     private String modifiedBy;
     private LocalDateTime createdAt;
     private LocalDateTime modifiedAt;
+
+    @PrePersist
+    public void prePersist() {
+        this.createdBy = "SYSTEM";
+        this.modifiedBy = "SYSTEM";
+        this.createdAt = LocalDateTime.now();
+        this.modifiedAt = LocalDateTime.now();
+    }
 }
