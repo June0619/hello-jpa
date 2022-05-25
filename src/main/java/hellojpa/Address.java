@@ -16,7 +16,9 @@ import javax.persistence.Embeddable;
  * **/
 
 @Embeddable
-@Getter @Setter
+@Getter
+//불변객체로 설계하기 위해 Setter를 제거한다.
+//@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Address {
