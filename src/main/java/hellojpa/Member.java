@@ -6,6 +6,10 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter @Setter
@@ -32,6 +36,9 @@ public class Member extends BaseEntity {
     // 값 타입을 사용하는 곳에 표시하는 어노테이션
     @Embedded
     private Address address;
+
+    private Set<String> favoriteFoods = new HashSet<>();
+    private List<Address> addressHistory = new ArrayList<>();
 
 
 }
