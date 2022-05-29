@@ -37,6 +37,8 @@ public class Member extends BaseEntity {
     @Embedded
     private Address address;
 
+    @ElementCollection
+    @CollectionTable(name = "FAVORITE_FOOD")
     private Set<String> favoriteFoods = new HashSet<>();
     private List<Address> addressHistory = new ArrayList<>();
 
