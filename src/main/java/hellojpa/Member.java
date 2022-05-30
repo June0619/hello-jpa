@@ -38,8 +38,15 @@ public class Member extends BaseEntity {
     private Address address;
 
     @ElementCollection
-    @CollectionTable(name = "FAVORITE_FOOD")
+    @CollectionTable(name = "FAVORITE_FOOD", joinColumns =
+        @JoinColumn(name = "MEMBER_ID")
+    )
     private Set<String> favoriteFoods = new HashSet<>();
+
+    @ElementCollection
+    @CollectionTable(name = "ADDRESS", joinColumns =
+        @JoinColumn(name = "MEMBER_ID")
+    )
     private List<Address> addressHistory = new ArrayList<>();
 
 
